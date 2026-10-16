@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1980" height="1400" viewBox="0 0 1980 1400">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#142b40} .edge{fill:none;stroke:#38566e;stroke-width:2} .attr{font-size:18px} .label{font-size:17px;text-anchor:middle} .card{font-size:20px;font-weight:bold;paint-order:stroke;stroke:white;stroke-width:6px}</style>
+<text x="990" y="42" text-anchor="middle" font-size="28" font-weight="bold">Professional Club Squad and Finance Management</text>
+<polyline class="edge" points="610,535 708,535"/>
+<polygon points="708,535 800,487 892,535 800,583" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="800" y="541.0">has player</text>
+<polyline class="edge" points="892,535 1000,535"/>
+<polyline class="edge" points="892,542 1000,542"/>
+<text class="card" x="637" y="520">1</text>
+<text class="card" x="963" y="520">N</text>
+<polyline class="edge" points="380,480 310,480 310,350 217,350"/>
+<polygon points="33,350 125,302 217,350 125,398" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="125" y="346">has</text><text class="label" x="125" y="366">stadium</text>
+<path class="edge" d="M122,398 V430 M129,398 V430"/>
+<text class="card" x="340" y="463">1</text><text class="card" x="145" y="423">1</text>
+<polyline class="edge" points="430,430 430,175 1178,175"/>
+<polygon points="1178,175 1270,127 1362,175 1270,223" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="1270" y="171.0">is source</text>
+<text class="label" x="1270" y="191.0">club</text>
+<polyline class="edge" points="1362,175 1735,175 1735,430"/>
+<text class="card" x="450" y="215">1</text>
+<text class="card" x="1750" y="400">N</text>
+<polyline class="edge" points="535,430 535,305 1178,305"/>
+<polygon points="1178,305 1270,257 1362,305 1270,353" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="1270" y="301.0">is destination</text>
+<text class="label" x="1270" y="321.0">club</text>
+<polyline class="edge" points="1362,305 1680,305 1680,430"/>
+<polyline class="edge" points="1362,312 1680,312 1680,437"/>
+<text class="card" x="555" y="340">1</text>
+<text class="card" x="1698" y="400">N</text>
+<polyline class="edge" points="1230,540 1338,540"/>
+<polygon points="1338,540 1430,492 1522,540 1430,588" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="1430" y="536.0">is subject</text>
+<text class="label" x="1430" y="556.0">of</text>
+<polyline class="edge" points="1522,540 1620,540"/>
+<polyline class="edge" points="1522,547 1620,547"/>
+<text class="card" x="1260" y="525">1</text>
+<text class="card" x="1580" y="525">N</text>
+<polyline class="edge" points="400,663 400,820 173,820"/>
+<polygon points="81,880 173,832 265,880 173,928" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="173" y="886.0">employs</text>
+<polyline class="edge" points="173,928 173,1000"/>
+<polyline class="edge" points="180,928 180,1000"/>
+<polyline class="edge" points="173,820 173,832"/>
+<text class="card" x="290" y="805">1</text>
+<text class="card" x="192" y="976">N</text>
+<polyline class="edge" points="500,663 500,825"/>
+<polygon points="408,873 500,825 592,873 500,921" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="500" y="869.0">has</text>
+<text class="label" x="500" y="889.0">sponsorship</text>
+<polyline class="edge" points="500,921 500,1050"/>
+<polyline class="edge" points="507,921 507,1050"/>
+<text class="card" x="518" y="802">1</text>
+<text class="card" x="520" y="1020">N</text>
+<polyline class="edge" points="610,620 750,620 750,832"/>
+<polygon points="658,880 750,832 842,880 750,928" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="750" y="876.0">signs</text>
+<text class="label" x="750" y="896.0">contract</text>
+<polyline class="edge" points="750,928 750,1130 1000,1130"/>
+<polyline class="edge" points="750,935 750,1137 1000,1137"/>
+<text class="card" x="655" y="605">1</text>
+<text class="card" x="960" y="1115">N</text>
+<polyline class="edge" points="1110,740 1110,832"/>
+<polygon points="1018,880 1110,832 1202,880 1110,928" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="1110" y="876.0">is party</text>
+<text class="label" x="1110" y="896.0">to</text>
+<polyline class="edge" points="1110,928 1110,1050"/>
+<polyline class="edge" points="1117,928 1117,1050"/>
+<text class="card" x="1130" y="800">1</text>
+<text class="card" x="1130" y="1020">N</text>
+<polyline class="edge" points="610,660 680,660 680,790 1510,790 1510,832"/>
+<polygon points="1418,880 1510,832 1602,880 1510,928" fill="#eef6fc" stroke="#38566e" stroke-width="2"/>
+<text class="label" x="1510" y="876.0">has</text>
+<text class="label" x="1510" y="896.0">transaction</text>
+<polyline class="edge" points="1510,928 1510,1140 1620,1140"/>
+<polyline class="edge" points="1517,928 1517,1140 1627,1140"/>
+<text class="card" x="637" y="645">1</text>
+<text class="card" x="1580" y="1120">N</text>
+<rect x="380" y="430" width="230" height="233" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M380,475 H610" stroke="#24445d"/><rect x="381" y="431" width="228" height="43" fill="#dcecf9"/>
+<text x="495.0" y="459" text-anchor="middle" font-size="19" font-weight="bold">Clubs</text>
+<text class="attr" x="396" y="502" text-decoration="underline" font-weight="bold">ClubID</text>
+<text class="attr" x="396" y="527">ClubName</text>
+<text class="attr" x="396" y="552">ShortCode</text>
+<text class="attr" x="396" y="577">FoundingYear</text>
+<text class="attr" x="396" y="602">City</text>
+<text class="attr" x="396" y="627">Budget</text>
+<text class="attr" x="396" y="652">CreatedAt</text>
+<rect x="1000" y="430" width="230" height="308" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M1000,475 H1230" stroke="#24445d"/><rect x="1001" y="431" width="228" height="43" fill="#dcecf9"/>
+<text x="1115.0" y="459" text-anchor="middle" font-size="19" font-weight="bold">Players</text>
+<text class="attr" x="1016" y="502" text-decoration="underline" font-weight="bold">PlayerID</text>
+<text class="attr" x="1016" y="527">ClubID</text>
+<text class="attr" x="1016" y="552">FirstName</text>
+<text class="attr" x="1016" y="577">LastName</text>
+<text class="attr" x="1016" y="602">BirthDate</text>
+<text class="attr" x="1016" y="627">Nationality</text>
+<text class="attr" x="1016" y="652">Position</text>
+<text class="attr" x="1016" y="677">JerseyNumber</text>
+<text class="attr" x="1016" y="702">MarketValue</text>
+<text class="attr" x="1016" y="727">CreatedAt</text>
+<rect x="1620" y="430" width="230" height="308" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M1620,475 H1850" stroke="#24445d"/><rect x="1621" y="431" width="228" height="43" fill="#dcecf9"/>
+<text x="1735.0" y="459" text-anchor="middle" font-size="19" font-weight="bold">Transfers</text>
+<text class="attr" x="1636" y="502" text-decoration="underline" font-weight="bold">TransferID</text>
+<text class="attr" x="1636" y="527">PlayerID</text>
+<text class="attr" x="1636" y="552">FromClubID</text>
+<text class="attr" x="1636" y="577">FromClubName</text>
+<text class="attr" x="1636" y="602">ToClubID</text>
+<text class="attr" x="1636" y="627">TransferDate</text>
+<text class="attr" x="1636" y="652">TransferFee</text>
+<text class="attr" x="1636" y="677">TransferType</text>
+<text class="attr" x="1636" y="702">Season</text>
+<text class="attr" x="1636" y="727">CreatedAt</text>
+<rect x="30" y="430" width="190" height="233" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M30,475 H220" stroke="#24445d"/><rect x="31" y="431" width="188" height="43" fill="#dcecf9"/>
+<text x="125.0" y="459" text-anchor="middle" font-size="19" font-weight="bold">Stadiums</text>
+<text class="attr" x="46" y="502" text-decoration="underline" font-weight="bold">StadiumID</text>
+<text class="attr" x="46" y="527">ClubID</text>
+<text class="attr" x="46" y="552">StadiumName</text>
+<text class="attr" x="46" y="577">City</text>
+<text class="attr" x="46" y="602">Capacity</text>
+<text class="attr" x="46" y="627">BuiltYear</text>
+<text class="attr" x="46" y="652">CreatedAt</text>
+<rect x="30" y="1000" width="230" height="308" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M30,1045 H260" stroke="#24445d"/><rect x="31" y="1001" width="228" height="43" fill="#dcecf9"/>
+<text x="145.0" y="1029" text-anchor="middle" font-size="19" font-weight="bold">TechnicalStaff</text>
+<text class="attr" x="46" y="1072" text-decoration="underline" font-weight="bold">StaffID</text>
+<text class="attr" x="46" y="1097">ClubID</text>
+<text class="attr" x="46" y="1122">FirstName</text>
+<text class="attr" x="46" y="1147">LastName</text>
+<text class="attr" x="46" y="1172">Role</text>
+<text class="attr" x="46" y="1197">Nationality</text>
+<text class="attr" x="46" y="1222">ContractStartDate</text>
+<text class="attr" x="46" y="1247">ContractEndDate</text>
+<text class="attr" x="46" y="1272">AnnualSalary</text>
+<text class="attr" x="46" y="1297">CreatedAt</text>
+<rect x="450" y="1050" width="230" height="283" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M450,1095 H680" stroke="#24445d"/><rect x="451" y="1051" width="228" height="43" fill="#dcecf9"/>
+<text x="565.0" y="1079" text-anchor="middle" font-size="19" font-weight="bold">Sponsorships</text>
+<text class="attr" x="466" y="1122" text-decoration="underline" font-weight="bold">SponsorshipID</text>
+<text class="attr" x="466" y="1147">ClubID</text>
+<text class="attr" x="466" y="1172">SponsorName</text>
+<text class="attr" x="466" y="1197">SponsorshipType</text>
+<text class="attr" x="466" y="1222">AnnualAmount</text>
+<text class="attr" x="466" y="1247">StartDate</text>
+<text class="attr" x="466" y="1272">EndDate</text>
+<text class="attr" x="466" y="1297">ContractStatus</text>
+<text class="attr" x="466" y="1322">CreatedAt</text>
+<rect x="1000" y="1050" width="230" height="283" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M1000,1095 H1230" stroke="#24445d"/><rect x="1001" y="1051" width="228" height="43" fill="#dcecf9"/>
+<text x="1115.0" y="1079" text-anchor="middle" font-size="19" font-weight="bold">Contracts</text>
+<text class="attr" x="1016" y="1122" text-decoration="underline" font-weight="bold">ContractID</text>
+<text class="attr" x="1016" y="1147">PlayerID</text>
+<text class="attr" x="1016" y="1172">ClubID</text>
+<text class="attr" x="1016" y="1197">StartDate</text>
+<text class="attr" x="1016" y="1222">EndDate</text>
+<text class="attr" x="1016" y="1247">AnnualSalary</text>
+<text class="attr" x="1016" y="1272">ReleaseClause</text>
+<text class="attr" x="1016" y="1297">ContractStatus</text>
+<text class="attr" x="1016" y="1322">CreatedAt</text>
+<rect x="1620" y="1050" width="230" height="283" rx="4" fill="white" stroke="#24445d" stroke-width="2"/>
+<path d="M1620,1095 H1850" stroke="#24445d"/><rect x="1621" y="1051" width="228" height="43" fill="#dcecf9"/>
+<text x="1735.0" y="1079" text-anchor="middle" font-size="19" font-weight="bold">FinancialTransactions</text>
+<text class="attr" x="1636" y="1122" text-decoration="underline" font-weight="bold">TransactionID</text>
+<text class="attr" x="1636" y="1147">ClubID</text>
+<text class="attr" x="1636" y="1172">TransactionType</text>
+<text class="attr" x="1636" y="1197">Category</text>
+<text class="attr" x="1636" y="1222">Amount</text>
+<text class="attr" x="1636" y="1247">TransactionDate</text>
+<text class="attr" x="1636" y="1272">Description</text>
+<text class="attr" x="1636" y="1297">Season</text>
+<text class="attr" x="1636" y="1322">CreatedAt</text>
+</svg>
