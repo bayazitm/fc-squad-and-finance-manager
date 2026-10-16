@@ -1,0 +1,20 @@
+﻿USE [FutbolKadroFinansDB]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Stadiums](
+	[StadiumID] [int] IDENTITY(1,1) NOT NULL,
+	[ClubID] [int] NOT NULL,
+	[StadiumName] [nvarchar](100) NOT NULL,
+	[City] [nvarchar](50) NOT NULL,
+	[Capacity] [int] NOT NULL,
+	[BuiltYear] [int] NULL,
+	[CreatedAt] [datetime2](7) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[StadiumID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
