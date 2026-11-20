@@ -16,7 +16,7 @@ The project combines a **SQL Server relational database** with a **Python / Djan
 | Record editing, sponsorship management, and contract renewal | Implemented in the application package |
 | Transfer workflows and transaction history | Implemented in the application package |
 | Season squad selection and basic eligibility checks | Implemented; requires verified eligibility data |
-| Custom reporting views and database triggers | Planned |
+| Three reporting views and two database audit triggers | SQL definitions included; run scripts 06–07 to activate |
 
 The database files below contain the eight core tables. Django application source and migrations are a separate part of the project and must be committed separately if they are not already present in this repository.
 
@@ -63,7 +63,7 @@ These counts describe the **20 November 2026 SQL export**. The `03_sample_data.s
 - `Clubs.ClubName`, `Clubs.ShortCode`, and `Stadiums.ClubID` have unique constraints.
 - `Transfers.FromClubID` is nullable so that an external club can be stored by name without an incorrect registered-club reference.
 - Fourteen defaults cover selected timestamps, statuses, and values.
-- Additional business validation is implemented in the Django forms and workflows. Custom SQL CHECK rules and triggers are not yet part of this core schema.
+- Additional business validation is implemented in the Django forms and workflows. The eight core tables retain their existing SQL constraints. Script 07 adds CHECK rules to the separate audit table and two audit triggers on Contracts and Sponsorships.
 
 ## Repository Structure
 
@@ -76,6 +76,9 @@ These counts describe the **20 November 2026 SQL export**. The `03_sample_data.s
 │   ├── 03_sample_data.sql
 │   ├── 04_constraints.sql
 │   ├── 05_queries.sql
+│   ├── 06_views.sql
+│   ├── 07_triggers.sql
+│   ├── 08_verify_features.sql
 │   └── tables/
 │       ├── Clubs.sql
 │       ├── Players.sql
@@ -87,6 +90,7 @@ These counts describe the **20 November 2026 SQL export**. The `03_sample_data.s
 │       └── FinancialTransactions.sql
 └── docs/
     ├── club-er-diagram.svg
+    ├── database-features.md
     ├── contract-sources.md
     └── database-update-2026-11-20.md
 ```
@@ -106,6 +110,11 @@ Use a **new database** and execute these scripts in order:
 | 3 | `database/03_sample_data.sql` | Load the complete snapshot |
 | 4 | `database/04_constraints.sql` | Add unique rules, defaults, and foreign keys |
 | 5 | `database/05_queries.sql` | Run optional reports and checks |
+| 6 | `database/06_views.sql` | Create or update the three reporting views |
+| 7 | `database/07_triggers.sql` | Create the database audit table and two audit triggers |
+| 8 | `database/08_verify_features.sql` | Optional local runtime verification; test data changes are rolled back |
+
+For the existing populated database, apply only scripts 06 and 07 to add these features; no fresh data export is needed. Script 08 is optional verification.
 
 Check each step for errors before continuing. These files are installation scripts, not repeatable migrations; do not rerun them on the existing populated project database. Updating the repository does not require executing them on the original database again.
 
@@ -135,6 +144,22 @@ The original eight Django models use `managed = False`. Application migrations c
 
 Financial reports use entries in `FinancialTransactions`. Contract, transfer, and sponsorship amounts do not automatically become realized cash movements. The core tables do not have per-row currency fields; values must not be combined across different or unspecified currencies.
 
+## Reporting Views and Audit Triggers
+
+| Object | Purpose |
+|---|---|
+| `vw_ClubFinancialSummary` | Recorded income, expenses, net movement, and counts by club/season |
+| `vw_ClubSquadSummary` | Core player count, goalkeeper count, market-value total, and average age by club |
+| `vw_ContractAlerts` | Active-marked contracts that have expired or end within 180 days |
+| `trg_Contracts_Audit` | Set-based INSERT/UPDATE/DELETE history for contracts |
+| `trg_Sponsorships_Audit` | Set-based INSERT/UPDATE/DELETE history for sponsorships |
+
+The two triggers write to the additional `DatabaseChangeLog` table. The original eight domain tables remain the core project schema; the database log is an additional technical table, alongside the separate Django helpers. It stores old/new JSON and SQL connection metadata. No-op updates are ignored. Audit rows participate in the original transaction and are rolled back with it.
+
+The UI still uses its ORM reports; these views are not yet wired into its dashboard. The database audit log is separate from the application change-history screen. No automatic transfer payment trigger is added, because the application already supports explicit payment recording.
+
+See [installation, examples, compatibility, and verification](docs/database-features.md). Definitions are supplied in GitHub; local SQL Server installation/testing must be confirmed separately.
+
 ## Data Sources and Assumptions
 
 Squad information was compiled using Transfermarkt screenshots. Some financial values were estimated with AI assistance and are not verified salary or accounting disclosures. Market value is not the same as annual salary.
@@ -156,6 +181,7 @@ See [Snapshot verification and changes](docs/database-update-2026-11-20.md) for 
 | 2026-10-16 | Organized SQL scripts and table files, prepared the core E-R diagram, and selected Django for the web interface. |
 | 2026-11-20 | Connected Django to the local SQL Server database and installed/opened the management interface. |
 | 2026-11-20 | Applied reviewed transfer/name corrections and the contract-date plan; exported and reorganized the updated core data. |
+| 2026-11-20 | Added definitions for three reporting views, two audit triggers, and a rollback-based local verification script. |
 
 Add a dated entry each week as development continues. Course week numbers should be added only after checking the actual course calendar.
 
@@ -169,5 +195,7 @@ The current core export retains all 1,513 INSERT statements, all table definitio
 - [ ] Test fresh database installation and application workflows on SQL Server.
 - [ ] Document additional data sources and distinguish verified from estimated values.
 - [ ] Review retained staff/sponsorship dates and major-club contract start dates.
-- [ ] Add reporting views, justified triggers, and additional database validation.
+- [x] Prepare reporting-view and database-audit-trigger definitions.
+- [ ] Confirm scripts 06–08 on the local SQL Server and connect reporting views to UI pages.
+- [ ] Add further database validation where justified.
 - [ ] Keep the weekly development log and prepare the course demos.
