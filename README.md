@@ -199,3 +199,85 @@ The current core export retains all 1,513 INSERT statements, all table definitio
 - [ ] Confirm scripts 06–08 on the local SQL Server and connect reporting views to UI pages.
 - [ ] Add further database validation where justified.
 - [ ] Keep the weekly development log and prepare the course demos.
+
+
+## Running the Django Application
+
+The Django source is located in `clubs/` and `config/`, with
+`manage.py` at the repository root.
+
+### Requirements
+
+- Python 3.12 or newer
+- Microsoft SQL Server
+- Microsoft ODBC Driver 17 or 18 for SQL Server
+
+### First-Time Setup
+
+Prepare the database using the SQL scripts described above.
+Do not reload the sample data into an existing populated database.
+
+Run these commands from the repository root in Windows PowerShell:
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+Copy-Item config/settings.example.py config/settings.py
+.\.venv\Scripts\python.exe manage.py check
+.\.venv\Scripts\python.exe manage.py migrate
+.\.venv\Scripts\python.exe manage.py runserver
+```
+
+Copy the example settings only for a fresh installation. Existing users
+should retain their working `config/settings.py`.
+
+The example uses Windows Authentication, `localhost`, and ODBC Driver 17.
+Adjust the database host and driver for your computer.
+
+Open http://127.0.0.1:8000/.
+
+Local demo mode opens without a password and requires a loopback connection
+with `DEBUG=True`. Set `TOUCHLINE_LOCAL_DEMO=False` to enable normal login.
+For a new administrative account, run `manage.py setup_roles` and
+`manage.py createsuperuser`.
+
+Django migrations maintain authentication and application helper tables.
+The eight core business models remain unmanaged.
+
+### Current Interface Features
+
+- Club and season selection.
+- Record editing, sponsorship management, and contract renewal.
+- Permanent transfer workflows and application change history.
+- Bulk squad selection and live squad prechecks.
+- Labelled estimates for continuing 2002 youth-contingent rights.
+- View-based reports and trigger-based database change history.
+
+| Screen | Database objects used |
+|---|---|
+| Database Reports — season finance | `vw_ClubFinancialSummary` |
+| Database Reports — squad summary | `vw_ClubSquadSummary` |
+| Database Reports — contract alerts | `vw_ContractAlerts` |
+| Database Changes | `DatabaseChangeLog`, populated by `trg_Contracts_Audit` and `trg_Sponsorships_Audit` |
+
+The main dashboard retains its Django ORM queries. The dedicated reporting
+screen reads the SQL views directly.
+
+Database Changes displays old/new values for contract and sponsorship
+changes made through either Django or SSMS after trigger installation.
+Application history remains a separate log.
+
+Verified eligibility metadata takes precedence in squad planning.
+Nationality-based classifications and automatically inferred continuation
+rights are explicitly labelled estimates, not official TFF verification.
+Only players selected in the draft are counted.
+
+### Development Update — 20 November 2026
+
+Added password-free local demo access, view-based reporting,
+trigger-history screens, bulk squad selection, live prechecks, and
+automatic continuation-right estimates.
+
+The updated application passed 70 tests on an isolated SQLite database.
+The supplied dataset rendered 577 pages. These checks do not replace
+live SQL Server integration or browser testing.
