@@ -427,3 +427,10 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+config/settings.py
+.venv/
+.env
+.touchline-backups/
+touchline-guncelleme/
+touchline-package/
